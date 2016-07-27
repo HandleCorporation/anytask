@@ -40,8 +40,8 @@ class Task(models.Model):
     )
     type = models.CharField(db_index=False, max_length=128, choices=TASK_TYPE_CHOICES, default=TYPE_FULL)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
     deadline_time = models.DateTimeField(auto_now=False, null=True, default=None)
 
     updated_by = models.ForeignKey(User, db_index=False, null=True, blank=True)
@@ -173,8 +173,8 @@ class TaskLog(models.Model):
     )
     type = models.CharField(db_index=False, max_length=128, choices=TASK_TYPE_CHOICES, default=TYPE_FULL)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
     deadline_time = models.DateTimeField(auto_now=False, null=True, default=None)
 
     updated_by = models.ForeignKey(User, db_index=False, null=True, blank=True)
@@ -228,8 +228,8 @@ class TaskTaken(models.Model):
     pdf_update_time = models.DateTimeField(default=datetime.now)
     gr_review_update_time = models.DateTimeField(default=datetime.now)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = (("user", "task"),)
@@ -268,8 +268,8 @@ class TaskTakenLog(models.Model):
 
     teacher_comments = models.TextField(db_index=False, null=True, blank=True, default='')
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return unicode(self.task) + " (" + unicode(self.user) + ")"

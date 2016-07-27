@@ -9,8 +9,8 @@ class Group(models.Model):
     name = models.CharField(max_length=254, db_index=True, null=False, blank=True)
     students = models.ManyToManyField(User, null=True, blank=True)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = (("year", "name"),)

@@ -54,8 +54,8 @@ class Issue(models.Model):
 
     mark = models.FloatField(db_index=False, null=False, blank=False, default=0)
 
-    create_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(default=datetime.now)
+    create_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
 
     responsible = models.ForeignKey(User, db_index=True, null=True, blank=True, related_name='responsible')
     followers = models.ManyToManyField(User, null=True, blank=True)

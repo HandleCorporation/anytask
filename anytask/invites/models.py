@@ -20,8 +20,8 @@ class Invite(models.Model):
     
     key = models.CharField(max_length=10, db_index=True, null=False, blank=False, unique=True)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
     
     def __unicode__(self):
         return u"{0}".format(self.key)

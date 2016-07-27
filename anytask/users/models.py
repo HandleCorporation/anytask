@@ -19,8 +19,8 @@ class UserProfile(models.Model):
     academic_degree = models.CharField(default="", max_length=128, unique=False, null=True, blank=True)
     academic_title = models.CharField(default="", max_length=128, unique=False, null=True, blank=True)
 
-    added_time = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    update_time = models.DateTimeField(auto_now=True, default=datetime.now)
+    added_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
 
 
     ya_uid = models.IntegerField(null=True, blank=True)

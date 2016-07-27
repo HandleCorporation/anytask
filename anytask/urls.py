@@ -1,7 +1,7 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, url, include
 from django.conf import settings
 from django.views.generic.base import RedirectView
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 # from django.contrib.auth.views import password_change
 
 
@@ -34,6 +34,6 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default_with_names.urls')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-    url(r'^about$', direct_to_template, {'template' : 'about.html'}),
+    url(r'^about$', TemplateView, {'template' : 'about.html'}),
     url(r'^$', 'index.views.index'),
 )

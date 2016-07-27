@@ -4,7 +4,7 @@ import re
 
 from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.sites.models import RequestSite
+from django.contrib.sites.requests import RequestSite
 from django.contrib.sites.models import Site
 from django import forms
 from django.shortcuts import get_object_or_404
